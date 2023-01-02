@@ -1,0 +1,3 @@
+/home/ed/github/camkeExample/build/CMakeFiles/rebuild_cache.dir
+/home/ed/github/camkeExample/build/CMakeFiles/main.dir
+/home/ed/github/camkeExample/build/CMakeFiles/edit_cache.dir
