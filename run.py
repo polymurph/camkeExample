@@ -1,17 +1,15 @@
 import os
 import re
 
-'''
-s = "abc123AUG|GAC|UGAasdfg789"
+# https://stackoverflow.com/questions/3368969/find-string-between-two-substrings
 
-pattern = "AUG\|(.*?)\|UGA"
-
-
-substring = re.search(pattern, s).group(1)
-
-print(substring)
-'''
-
+def find_between_r( s, first, last ):
+    try:
+        start = s.rindex( first ) + len( first )
+        end = s.rindex( last, start )
+        return s[start:end]
+    except ValueError:
+        return ""
 
 currentPath = os.getcwd()
 
@@ -23,9 +21,7 @@ print('searching for project name...')
 
 with open(CMakeListsPath, 'r') as file:
 	content = file.read()
-        #print(content)
-        regexPattern = '5' + '(.*?)' + 'kgt)'
-	projectName = re.search(regexPattern, '12345Testkgt').group(1)
+        projectName = find_between_r(content, 'set(PROJECT_NAME "', '")')
 	
 if projectName == 'None':
     print('could not find project name!')
