@@ -26,6 +26,9 @@ with open(CMakeListsPath, 'r') as file:
 if projectName == 'None':
     print('could not find project name!')
 else:
-    print(projectName)
+    print(os.getcwd())
+    os.system('cd build/')
+    print(os.getcwd())
+    os.system('./' + projectName)
 
 
